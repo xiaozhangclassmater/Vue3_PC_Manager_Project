@@ -1,6 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div></div>
 </template>
 
 <script lang="ts">
@@ -8,7 +7,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "App",
-  components: {},
+  components: {}
 });
 </script>
 
