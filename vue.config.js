@@ -5,8 +5,13 @@ const resolve = (dir) => path.join(__dirname, dir);
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  devServer: {},
-
+  devServer: {
+    proxy: {
+      "/api": {
+        target: "http://152.136.185.210:5000"
+      }
+    }
+  },
   configureWebpack: {
     resolve: {
       alias: {
