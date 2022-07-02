@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    // 目标代码 ts -> js
+    "target": "esnext",
+    //目标代码转换的方案
+    "module": "esnext",
+    "strict": true,
+    // 是否处理 "jsx"
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    // 跳过对库的类型检测
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    // 映射文件
+    "sourceMap": true,
+    "baseUrl": "./",
+    "types": ["webpack-env"],
+
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  "exclude": ["node_modules","dist"]
+}
