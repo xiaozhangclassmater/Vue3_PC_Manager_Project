@@ -39,8 +39,6 @@ const exitLogin = async () => {
   const result = await ElMessageBox.confirm("你确定要退出登录吗?", "退出登录", {
     type: "warning"
   }).catch((e) => e);
-  console.log(result);
-
   if (result === "cancel") return;
   user.ClearUserinfo();
   Cache.removeCache("token");
