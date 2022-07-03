@@ -34,9 +34,4 @@ interface UserMenus {
   sort: number;
   children: unknown[];
 }
-
-export interface ResponseData<T = unknown> {
-  code: number;
-  data: T;
-}
 export { AccountLogin, LoginResult, UserDetail, UserMenus };

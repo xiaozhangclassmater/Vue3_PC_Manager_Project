@@ -1,6 +1,7 @@
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHashHistory } from "vue-router";
 import asyncRoutes from "./module";
+
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
@@ -24,32 +25,15 @@ const routes: RouteRecordRaw[] = [
         meta: { title: "主页", icon: "dashboard" }
       }
     ]
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/404"
   }
-  // {
-  //   path: "/:pathMatch(.*)*",
-  //   redirect: "/404"
-  // }
 ];
-// const asyncRoutes = asyncRoutes;
-console.log([...routes, ...asyncRoutes]);
 const router = createRouter({
   routes: [...routes, ...asyncRoutes],
   history: createWebHashHistory()
 });
 
 export default router;
-
-// "/main/analysis/overview"
-//  "/main/analysis/dashboard"
-//  "/main/analysis"
-//  "/main/system/user"
-//  "/main/system/department"
-//  "/main/system/menu"
-//  "/main/system/role"
-//  "/main/system"
-//  "/main/product/category"
-//  "/main/product/goods"
-//  "/main/product"
-//  "/main/story/chat"
-//  "/main/story/list"
-//  "/main/story"

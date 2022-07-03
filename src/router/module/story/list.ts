@@ -1,8 +1,7 @@
 // const Main = () => import("@/views/main/main.vue");
 import Main from "@/views/main/main.vue";
 export default {
-  path: "/story/list",
-  alias: "/main/story/list.html",
+  path: "/main/story/list",
   component: Main,
   children: [
     {

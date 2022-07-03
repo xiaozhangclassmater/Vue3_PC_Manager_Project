@@ -14,7 +14,7 @@
       :collapse-transition="false"
       class="el-menu-vertical-demo"
     >
-      <template v-for="item in user.userinfo.Menus" :key="item.id">
+      <template v-for="item in user.userinfo?.Menus" :key="item.id">
         <template v-if="item.type === 1">
           <el-sub-menu :index="item.url">
             <template #title>

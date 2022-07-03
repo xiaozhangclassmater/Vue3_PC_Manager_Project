@@ -1,6 +1,16 @@
 // 用户模块 vuex状态
 interface userState {
-  userinfo: any;
+  userinfo: {
+    Menus: Array;
+    cellphone: number;
+    id: number;
+    name: string;
+    realname: string;
+    cellphone: number;
+    enable: number;
+    createAt: Date;
+    updateAt: Date;
+  } | null;
   token: string;
   userId: number;
 }

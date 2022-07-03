@@ -39,7 +39,7 @@ const LoginAction = async () => {
   try {
     await user.Userlogin(Account);
     ElMessage.success("登录成功");
-    Router.push("/layout");
+    Router.push("/main");
   } catch (e) {}
 };
 
