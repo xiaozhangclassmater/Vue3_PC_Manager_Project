@@ -10,7 +10,9 @@ export const useUserStore = defineStore("User", {
   state: (): userState => ({
     token: Cache.getCache("token") || "",
     userId: Cache.getCache("UserId") || -1,
-    userinfo: null
+    userinfo: null,
+    // 面包屑数组
+    BreadList: []
   }),
   actions: {
     async Userlogin(payload: AccountLogin) {
@@ -34,6 +36,9 @@ export const useUserStore = defineStore("User", {
       // 重置 数据
       this.userId = -1;
       this.userinfo = null;
+    },
+    UpdateBreadList(payload: any) {
+      this.BreadList = payload;
     }
   }
 });

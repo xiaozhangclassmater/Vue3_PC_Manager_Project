@@ -37,9 +37,23 @@
 
 <script setup lang="ts">
 import useStore from "@/store";
+import { watch } from "vue";
 import { useRoute } from "vue-router";
 const Route = useRoute();
 const { user } = useStore();
+watch(
+  () => Route.fullPath,
+  () => {
+    user.UpdateBreadList(Route.matched);
+    // 方法二 手动过率
+    // const Children: any = result.filter((item: any) => item.url === Route.path);
+    // const Parent: any = result.find((item: any) => item.id === Children[0]?.parentId);
+    // user.BreadList = [];
+    // user.BreadList.push(Parent);
+    // user.BreadList.push(...Children);
+  },
+  { immediate: true }
+);
 </script>
 
 <style lang="less" scoped>

@@ -1,8 +1,7 @@
 import { useUserStore } from "./module/user";
 
-const useStore = () => {
-  return {
-    user: useUserStore()
-  };
-};
+const useStore = () => ({
+  user: useUserStore()
+});
+
 export default useStore;

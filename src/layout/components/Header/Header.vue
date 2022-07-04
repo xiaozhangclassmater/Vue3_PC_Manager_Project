@@ -1,9 +1,22 @@
 <template>
   <el-header class="header">
     <div class="ShowSidebar">
-      <el-icon :size="20">
-        <Expand />
-      </el-icon>
+      <div class="icon">
+        <el-icon :size="20">
+          <Expand />
+        </el-icon>
+      </div>
+      <div>
+        <el-breadcrumb>
+          <el-breadcrumb-item
+            v-for="(item, index) in user.BreadList"
+            :key="index"
+            :to="{ path: '/' }"
+          >
+            {{ item.meta.title }}
+          </el-breadcrumb-item>
+        </el-breadcrumb>
+      </div>
     </div>
     <div class="userInfo">
       <div class="name">
@@ -13,7 +26,9 @@
         <el-dropdown>
           <span class="el-dropdown-link">
             菜单
-            <el-icon class="el-icon--right"> <arrow-down /></el-icon>
+            <el-icon class="el-icon--right">
+              <arrow-down />
+            </el-icon>
           </span>
           <template #dropdown>
             <el-dropdown-menu>
@@ -39,6 +54,7 @@ const exitLogin = async () => {
   const result = await ElMessageBox.confirm("你确定要退出登录吗?", "退出登录", {
     type: "warning"
   }).catch((e) => e);
+
   if (result === "cancel") return;
   user.ClearUserinfo();
   Cache.removeCache("token");
@@ -59,6 +75,8 @@ const exitLogin = async () => {
 }
 .userInfo {
   display: flex;
+  justify-content: flex-end;
+  width: 50%;
   .name {
     padding-right: 15px;
   }
@@ -68,6 +86,9 @@ const exitLogin = async () => {
   cursor: pointer;
   align-items: center;
   height: 100%;
-  width: 30px;
+  width: 50%;
+  .icon {
+    margin-right: 15px;
+  }
 }
 </style>

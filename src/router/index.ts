@@ -16,13 +16,14 @@ const routes: RouteRecordRaw[] = [
     path: "/main",
     redirect: "/main/analysis/dashboard",
     name: "main",
+    meta: { title: "系统总览" },
     component: () => import("@/views/main/main.vue"),
     children: [
       {
         path: "analysis/dashboard",
         name: "dashboard",
         component: () => import("@/views/analysis/dashboard/dashboard.vue"),
-        meta: { title: "主页", icon: "dashboard" }
+        meta: { title: "商品统计" }
       }
     ]
   },

@@ -13,6 +13,13 @@ interface userState {
   } | null;
   token: string;
   userId: number;
+  BreadList: {
+    meta: {
+      title: string;
+    };
+    path: string;
+    name: string;
+  }[];
 }
 
 export { userState };

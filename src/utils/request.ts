@@ -1,8 +1,8 @@
-import axios from "axios";
 import Cache from "@/utils/Cache";
-import { useRouter } from "vue-router";
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
+import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios from "axios";
 import { ElMessage } from "element-plus";
+import { useRouter } from "vue-router";
 const services: AxiosInstance = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000
@@ -26,8 +26,7 @@ services.interceptors.request.use(
 // 响应拦截器
 services.interceptors.response.use(
   (response: AxiosResponse) => {
-    if (response.status === 401) {
-      console.log(111);
+    if (response?.status === 401) {
       ElMessage.error("身份过期，请重新登录");
       Router.push("/login");
     }
