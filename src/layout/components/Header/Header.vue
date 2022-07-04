@@ -11,7 +11,7 @@
           <el-breadcrumb-item
             v-for="(item, index) in user.BreadList"
             :key="index"
-            :to="{ path: '/' }"
+            :to="{ path: item.path }"
           >
             {{ item.meta.title }}
           </el-breadcrumb-item>

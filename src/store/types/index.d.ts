@@ -1,5 +1,5 @@
 // 用户模块 vuex状态
-interface userState {
+export interface userState {
   userinfo: {
     Menus: Array;
     cellphone: number;
@@ -21,5 +21,3 @@ interface userState {
     name: string;
   }[];
 }
-
-export { userState };

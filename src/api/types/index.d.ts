@@ -8,6 +8,7 @@ interface LoginResult {
   name: string;
 }
 
+// 用户信息详情
 interface UserDetail {
   id: number;
   name: string;
@@ -24,7 +25,7 @@ interface UserDetail {
     updateAt: Date;
   };
 }
-
+// 用户能够访问的列表
 interface UserMenus {
   id: number;
   name: string;
@@ -34,4 +35,15 @@ interface UserMenus {
   sort: number;
   children: unknown[];
 }
-export { AccountLogin, LoginResult, UserDetail, UserMenus };
+
+type GoodsRes = {
+  amount: string;
+  amount: string;
+  number1: number;
+  number2: number;
+  subtitle: string;
+  tips: string;
+  title: string;
+}[];
+
+export { AccountLogin, LoginResult, UserDetail, UserMenus, GoodsRes };
