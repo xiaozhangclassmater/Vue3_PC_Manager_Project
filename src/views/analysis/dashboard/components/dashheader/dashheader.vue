@@ -39,6 +39,7 @@ LoadProductCounts();
 .dashboard-header {
   display: flex;
   width: 100%;
+  background-color: #fff;
 
   .GoodsCounter {
     width: 25%;
